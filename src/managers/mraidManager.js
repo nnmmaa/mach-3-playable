@@ -26,7 +26,6 @@ export class MraidManager {
             }
         } else {
             DebugOverlay.log('[MraidManager] MRAID не найден, работаем в тестовом режиме (браузер).');
-            // Если mraid нет, просто запускаем игру сразу
             startGameCallback();
         }
     }
@@ -71,8 +70,6 @@ export class MraidManager {
         // Подписка на sizeChange
         mraid.addEventListener('sizeChange', (width, height) => {
             DebugOverlay.log(`[MraidManager] sizeChange: ${width}x${height}`);
-            // Иногда здесь можно вызвать game.scale.resize(...)
-            // если хотите подстраивать canvas
         });
 
         // Подписка на ошибки
